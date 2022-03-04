@@ -13,6 +13,12 @@ public class Poupanca extends Conta {
     
     private Double taxaJuros;
     
+    public Poupanca(Double taxaJuros, Double saldoInicial, Integer numero) {
+        super(saldoInicial, numero);
+        this.taxaJuros = taxaJuros;
+        
+        
+    }
     
     public void cobrarTarifaSaque() {
         if(this.totalSaques > 4) {

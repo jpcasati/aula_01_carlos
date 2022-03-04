@@ -17,17 +17,24 @@ public class Conta {
     
     protected Double saldoAtual;
     
-    protected Double tarifaMensal;
-    
-    protected Integer totalDepoitos;
+    protected Integer totalDepositos;
     
     protected Integer totalSaques;
     
-    protected Double valorDepoitos;
+    protected Double valorDepositos;
     
     protected Double valorSaques;
     
-    
+    public Conta(Double saldoInicial, Integer numero) {
+        this.saldoInicial = saldoInicial;
+        this.numero = numero;
+        this.saldoAtual = saldoInicial;
+        this.totalDepositos = 0;
+        this.valorDepositos = 0.0;
+        this.totalSaques = 0;
+        this.valorSaques = 0.0;
+        
+    }
     
     protected Boolean possuiSaldoSuficiente(Double valorConferencia) {
         if(this.saldoAtual >= valorConferencia)
@@ -39,8 +46,8 @@ public class Conta {
     protected void fazerDeposito(Double valorDeposito) {
         
         this.saldoAtual += valorDeposito;
-        this.valorDepoitos += valorDeposito;
-        this.totalDepoitos++;
+        this.valorDepositos += valorDeposito;
+        this.totalDepositos++;
         
     }
     

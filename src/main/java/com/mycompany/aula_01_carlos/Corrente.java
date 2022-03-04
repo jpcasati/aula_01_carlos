@@ -11,6 +11,8 @@ package com.mycompany.aula_01_carlos;
  */
 public class Corrente extends Conta {
     
+    protected Double tarifaMensal;
+    
     public void cobrarTarifaSaque() {
 
         this.saldoAtual -= 0.5;
