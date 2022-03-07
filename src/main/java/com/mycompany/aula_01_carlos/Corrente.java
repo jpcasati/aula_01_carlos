@@ -13,6 +13,12 @@ public class Corrente extends Conta {
     
     protected Double tarifaMensal;
     
+    
+    public Corrente(Double saldoInicial, Integer numero, Double tarifaMensal) {
+        super(saldoInicial, numero);
+        this.tarifaMensal = tarifaMensal;
+    }
+    
     public void cobrarTarifaSaque() {
 
         this.saldoAtual -= 0.5;
