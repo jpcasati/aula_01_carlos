@@ -21,7 +21,9 @@ public class Corrente extends Conta {
     
     public void cobrarTarifaSaque() {
 
-        this.saldoAtual -= 0.5;
+        double tarifa = 0.5;
+        this.setSaldoAtual((Double) (this.getSaldoAtual() - tarifa));
+        this.setValorTotalTarifas(this.getValorTotalTarifas() + tarifa);
         
     }
     
@@ -29,9 +31,9 @@ public class Corrente extends Conta {
         
         if(possuiSaldoSuficiente(valorSaque)) {
             
-            this.saldoAtual -= valorSaque;
-            this.valorSaques += valorSaque;
-            this.totalSaques++;
+            this.setSaldoAtual((Double) (this.getSaldoAtual() - valorSaque));
+            this.setValorSaques((Double) (this.getValorSaques() + valorSaque));
+            this.setTotalSaques((Integer) (this.getTotalSaques() + 1));
             
             cobrarTarifaSaque();
             

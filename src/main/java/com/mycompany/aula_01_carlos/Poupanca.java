@@ -21,8 +21,10 @@ public class Poupanca extends Conta {
     }
     
     public void cobrarTarifaSaque() {
-        if(this.totalSaques > 4) {
-            this.saldoAtual -= 1;
+        if(this.getTotalSaques() > 4) {
+            double tarifa = 1;
+            this.setSaldoAtual((Double) (this.getSaldoAtual() - tarifa));
+            this.setValorTotalTarifas(this.getValorTotalTarifas() + tarifa);
         }
     }
     
@@ -30,9 +32,9 @@ public class Poupanca extends Conta {
         
         if(possuiSaldoSuficiente(valorSaque)) {
             
-            this.saldoAtual -= valorSaque;
-            this.valorSaques += valorSaque;
-            this.totalSaques++;
+            this.setSaldoAtual((Double) (this.getSaldoAtual() - valorSaque));
+            this.setValorSaques((Double) (this.getValorSaques() + valorSaque));
+            this.setTotalSaques((Integer) (this.getTotalSaques() + 1));
             
             cobrarTarifaSaque();
             
@@ -42,5 +44,15 @@ public class Poupanca extends Conta {
         }
         
     }
+
+    public Double getTaxaJuros() {
+        return taxaJuros;
+    }
+
+    public void setTaxaJuros(Double taxaJuros) {
+        this.taxaJuros = taxaJuros;
+    }
+    
+    
     
 }

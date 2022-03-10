@@ -92,6 +92,8 @@ public class MainClass {
                                 System.out.println("\nSaque efetuado!");
                             else
                                 System.out.println("\nSaldo insuficiente!");
+                        } else if(r.equals("C")) {
+                            printSavingsReport(p);
                         }
                     }
                     
@@ -126,6 +128,8 @@ public class MainClass {
                                 System.out.println("\nSaque efetuado!");
                             else
                                 System.out.println("\nSaldo insuficiente!");
+                        } else if(r.equals("C")) {
+                            //printCheckingReport(c);
                         }
                         
                     }
@@ -142,6 +146,21 @@ public class MainClass {
     static String adequarEntrada(String entrada) {
         String saida = entrada.toUpperCase().substring(0,1);
         return saida;
+    }
+    
+    static void printSavingsReport(Poupanca p) {
+        System.out.println("\n == RELATÓRIO DE POUPANÇA ==");
+        System.out.println("Número da conta: " + p.getNumero());
+        System.out.println("Saldo inicial: " + p.getSaldoInicial());
+        System.out.println("Saldo atual: " + p.getSaldoAtual());
+        System.out.println("Quantidade de depósitos: " + p.getTotalDepositos());
+        System.out.println("Valor total depositado: " + p.getValorDepositos());
+        System.out.println("Quantidade de saques: " + p.getTotalSaques());
+        System.out.println("Valor total de saques: " + p.getValorSaques());
+        System.out.println("Taxa de juros: " + p.getTaxaJuros());
+        System.out.println("Valor total de tarifas: " + p.getValorTotalTarifas());
+        System.out.println("===========================");
+        
     }
     
 }

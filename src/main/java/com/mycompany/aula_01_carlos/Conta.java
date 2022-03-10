@@ -11,19 +11,21 @@ package com.mycompany.aula_01_carlos;
  */
 public class Conta {
     
-    protected Integer numero;
+    private Integer numero;
     
-    protected Double saldoInicial;
+    private Double saldoInicial;
     
-    protected Double saldoAtual;
+    private Double saldoAtual;
     
-    protected Integer totalDepositos;
+    private Integer totalDepositos;
     
-    protected Integer totalSaques;
+    private Integer totalSaques;
     
-    protected Double valorDepositos;
+    private Double valorDepositos;
     
-    protected Double valorSaques;
+    private Double valorSaques;
+    
+    private Double valorTotalTarifas;
     
     public Conta(Double saldoInicial, Integer numero) {
         this.saldoInicial = saldoInicial;
@@ -33,6 +35,7 @@ public class Conta {
         this.valorDepositos = 0.0;
         this.totalSaques = 0;
         this.valorSaques = 0.0;
+        this.valorTotalTarifas = 0.0;
         
     }
     
@@ -50,7 +53,69 @@ public class Conta {
         this.totalDepositos++;
         
     }
-    
-    
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public Double getSaldoInicial() {
+        return saldoInicial;
+    }
+
+    public void setSaldoInicial(Double saldoInicial) {
+        this.saldoInicial = saldoInicial;
+    }
+
+    public Double getSaldoAtual() {
+        return saldoAtual;
+    }
+
+    public void setSaldoAtual(Double saldoAtual) {
+        this.saldoAtual = saldoAtual;
+    }
+
+    public Integer getTotalDepositos() {
+        return totalDepositos;
+    }
+
+    public void setTotalDepositos(Integer totalDepositos) {
+        this.totalDepositos = totalDepositos;
+    }
+
+    public Integer getTotalSaques() {
+        return totalSaques;
+    }
+
+    public void setTotalSaques(Integer totalSaques) {
+        this.totalSaques = totalSaques;
+    }
+
+    public Double getValorDepositos() {
+        return valorDepositos;
+    }
+
+    public void setValorDepositos(Double valorDepositos) {
+        this.valorDepositos = valorDepositos;
+    }
+
+    public Double getValorSaques() {
+        return valorSaques;
+    }
+
+    public void setValorSaques(Double valorSaques) {
+        this.valorSaques = valorSaques;
+    }
+
+    public Double getValorTotalTarifas() {
+        return valorTotalTarifas;
+    }
+
+    public void setValorTotalTarifas(Double valorTotalTarifas) {
+        this.valorTotalTarifas = valorTotalTarifas;
+    }
     
 }
